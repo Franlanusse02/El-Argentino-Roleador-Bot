@@ -51,6 +51,8 @@ client.on('message', message => {
         client.commands.get('ultraping').execute(message, args);
     } else if(!command){
         message.channel.send('Ese todavia no me lo aprendi, pedile a Fran que me lo enseñe.')
+    } else if(command === 'ban'){
+        client.commands.get('ban').execute(message, args);
     }
 });
 
