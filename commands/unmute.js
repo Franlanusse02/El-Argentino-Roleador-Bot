@@ -18,7 +18,7 @@ module.exports = {
         } else if(message.member.roles.cache.has(modRole) || muteMember.roles.cache.has(muteRole)){
             muteMember.roles.add(mainRole);
             muteMember.roles.remove(muteRole);  
-            message.channel.send(`@${muteMember.user.tag} fue desmuteado.`);
+            message.channel.send(`${muteMember.user} fue desmuteado.`);
         } else if(message.member.roles.cache.has(modRole) || !muteMember.roles.cache.has(muteRole)){
             message.channel.send('La persona no esta muteada');
          

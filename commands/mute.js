@@ -26,7 +26,7 @@ module.exports = {
                 muteMember.roles.remove(mainRole);
                 muteMember.roles.add(muteRole);
 
-                message.channel.send(`@${muteMember.user.tag} fue muteado.`);
+                message.channel.send(`${muteMember.user} fue muteado.`);
                 
             }
         
