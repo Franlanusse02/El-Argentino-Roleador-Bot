@@ -49,6 +49,8 @@ client.on('message', message => {
         client.commands.get('whatislove').execute(message, args);
     } else if(command === 'ultraping'){
         client.commands.get('ultraping').execute(message, args);
+    } else if(!command){
+        message.channel.send('Ese todavia no me lo aprendi, pedile a Fran que me lo enseñe.')
     }
 });
 
