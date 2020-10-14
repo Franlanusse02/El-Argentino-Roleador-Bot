@@ -47,6 +47,8 @@ client.on('message', message => {
         client.commands.get('unmute').execute(message, args);
     } else if(command === 'whatislove'){
         client.commands.get('whatislove').execute(message, args);
+    } else if(command === 'ultraping'){
+        client.commands.get('ultraping').execute(message, args);
     }
 });
 
