@@ -8,10 +8,11 @@ module.exports = {
         let modRole = '685934052943200385';
         let helperRole = '718632822532735000'
         
-        if(!message.member.roles.cache.has(modRole) || !message.member.roles.cache.has(helperRole)){
+        if(!message.member.roles.cache.has(modRole)){
             console.log('Oh oh')
-            message.channel.send('No tenes permiso para usar este comando.');
-            
+            if(!message.member.roles.cache.has(helperRole)){ 
+                message.channel.send('No tenes permiso para usar este comando.');
+            }
         } else if (!args[0]){
             message.channel.send('Nadie fue seleccionado para mutear.');
         } else {
