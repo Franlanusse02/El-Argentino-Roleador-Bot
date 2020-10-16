@@ -16,7 +16,7 @@ module.exports = {
         } else if (!args[0]){
             message.channel.send('Nadie fue seleccionado para mutear.');
         } else {
-            let muteMember = message.mentions.members.first() && message.guild.members.cache.get(args[0]);
+            let muteMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
             if(!muteMember) {
                 message.channel.send('Esa persona no esta en el server.');
             }
