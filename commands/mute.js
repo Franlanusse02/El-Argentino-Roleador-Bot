@@ -6,8 +6,9 @@ module.exports = {
         let mainRole = '685937885228040228';
         let muteRole = '717544216380833894';
         let modRole = '685934052943200385';
+        let helperRole = '718632822532735000'
         
-        if(!message.member.roles.cache.has(modRole)){
+        if(!message.member.roles.cache.has(modRole) or !message.member.roles.cache.has(helperRole)){
             console.log('Oh oh')
             message.channel.send('No tenes permiso para usar este comando.');
             
