@@ -12,19 +12,27 @@ module.exports = {
 
         if (!args[0]){
             message.channel.send('Nadie fue seleccionado para desmutear.');
-        } else if(!message.member.roles.cache.has(modRole) || !message.member.roles.cache.has(helperRole)){
-            message.channel.send('No tenes permiso para usar este comando.');
+        } else if(!message.member.roles.cache.has(modRole)){
+            if(!message.member.roles.cache.has(helperRole){
+                message.channel.send('No tenes permiso para usar este comando.');
+            }
         } else if(!muteMember) {
             message.channel.send('Esa persona no esta en el server.');
-        } else if(message.member.roles.cache.has(modRole) && muteMember.roles.cache.has(muteRole)){
+        } else if(message.member.roles.cache.has(modRole) || muteMember.roles.cache.has(muteRole)){
             muteMember.roles.add(mainRole);
             muteMember.roles.remove(muteRole);  
             message.channel.send(`${muteMember.user} fue desmuteado.`);
-        } else if(message.member.roles.cache.has(modRole) || message.member.roles.cache.has(helperRole) && !muteMember.roles.cache.has(muteRole)){
+            
+        } else if(message.member.roles.cache.has(helperRole) || muteMember.roles.cache.has(muteRole)){
+            muteMember.roles.add(mainRole);
+            muteMember.roles.remove(muteRole);  
+            message.channel.send(`${muteMember.user} fue desmuteado.`);
+            
+        } else if(message.member.roles.cache.has(modRole) )  !muteMember.roles.cache.has(muteRole)){
             message.channel.send('La persona no esta muteada');
          
-        } else {
-            
+        } else if( message.member.roles.cache.has(helperRole) || !muteMember.roles.cache.has(muteRole)){
+            message.channel.send('La persona no esta muteada');
         }
         
     }
