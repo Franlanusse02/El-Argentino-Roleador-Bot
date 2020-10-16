@@ -6,7 +6,8 @@ module.exports = {
         let mainRole = '685937885228040228';
         let muteRole = '717544216380833894';
         let modRole = '685934052943200385';
-        let helperRole = '718632822532735000'
+        let helperRole = '718632822532735000';
+        let muteMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
         
         if(!message.member.roles.cache.has(modRole)){
             console.log('Oh oh')
@@ -15,8 +16,20 @@ module.exports = {
             }
         } else if (!args[0]){
             message.channel.send('Nadie fue seleccionado para mutear.');
+            
+        } else if (message.member.roles.cache.has(modRole) || muteMember.roles.cache.has(muteRole)){
+            muteMember.roles.remove(mainRole);
+            muteMember.roles.add(muteRole);
+
+            message.channel.send(`${muteMember.user} fue muteado.`);
+        } else if (message.member.roles.cache.has(helperRole) || muteMember.roles.cache.has(muteRole)){
+            muteMember.roles.remove(mainRole);
+            muteMember.roles.add(muteRole);
+
+            message.channel.send(`${muteMember.user} fue muteado.`);
+        }
         } else {
-            let muteMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
+            
             if(!muteMember) {
                 message.channel.send('Esa persona no esta en el server.');
             }
@@ -25,10 +38,7 @@ module.exports = {
                 
                 
                 
-                muteMember.roles.remove(mainRole);
-                muteMember.roles.add(muteRole);
-
-                message.channel.send(`${muteMember.user} fue muteado.`);
+                
                 
             }
         
