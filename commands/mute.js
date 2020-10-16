@@ -27,19 +27,11 @@ module.exports = {
             muteMember.roles.add(muteRole);
 
             message.channel.send(`${muteMember.user} fue muteado.`);
-        }
+        
         } else {
             
             if(!muteMember) {
                 message.channel.send('Esa persona no esta en el server.');
-            }
-            else {
-                
-                
-                
-                
-                
-                
             }
         
         }
