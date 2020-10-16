@@ -13,7 +13,7 @@ module.exports = {
         if (!args[0]){
             message.channel.send('Nadie fue seleccionado para desmutear.');
         } else if(!message.member.roles.cache.has(modRole)){
-            if(!message.member.roles.cache.has(helperRole){
+            if(!message.member.roles.cache.has(helperRole)){
                 message.channel.send('No tenes permiso para usar este comando.');
             }
         } else if(!muteMember) {
