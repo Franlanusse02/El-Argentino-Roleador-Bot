@@ -12,7 +12,7 @@ module.exports = {
         if(!message.member.roles.cache.has(modRole) && !message.member.roles.cache.has(helperRole)){
             console.log('Oh oh') 
             message.channel.send('No tenes permiso para usar este comando.');
-        } else if (muteMember == message.member){
+        } else if (muteMember == message.member.id){
             if (message.member.roles.cache.has(modRole) && message.member.roles.cache.has(helperRole)) {  
                 message.channel.send('No puedes mutearte a vos mismo.')
             }
