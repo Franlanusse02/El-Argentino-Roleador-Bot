@@ -12,8 +12,10 @@ module.exports = {
         if(!message.member.roles.cache.has(modRole) && !message.member.roles.cache.has(helperRole)){
             console.log('Oh oh') 
             message.channel.send('No tenes permiso para usar este comando.');
-        } else if (message.member.roles.cache.has(modRole) && message.member.roles.cache.has(helperRole) || muteMember == message.member()){
-            message.channel.send('No puedes mutearte a vos mismo.')
+        } else if (muteMember == message.member()){
+            if (message.member.roles.cache.has(modRole) && message.member.roles.cache.has(helperRole)) {  
+                message.channel.send('No puedes mutearte a vos mismo.')
+            }
         } else if (!args[0]){
             message.channel.send('Nadie fue seleccionado para mutear.');
             
