@@ -16,6 +16,10 @@ module.exports = {
             
             message.channel.send('No tenes permiso para usar este comando.');
 
+        } else if (muteMember == message.member.id){
+            
+            message.channel.send('No puedes desmutearte a vos mismo.');
+
         } else if(!muteMember) {
             message.channel.send('Esa persona no esta en el server.');
         } else if(message.member.roles.cache.has(modRole) || muteMember.roles.cache.has(muteRole)){

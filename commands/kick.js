@@ -5,7 +5,11 @@ module.exports = {
         
         const { member , mentions } = message;
 
-        if(message.member.permissions.has('ADMINISTRATOR') || 
+        if (muteMember == message.member.id){
+            
+            message.channel.send('No puedes desmutearte a vos mismo.');
+
+        }else if(message.member.permissions.has('ADMINISTRATOR') || 
         message.member.permissions.has('KICK_MEMBERS')) {
             let target = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
             if(target){
