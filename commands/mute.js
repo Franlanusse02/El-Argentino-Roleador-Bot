@@ -11,7 +11,7 @@ module.exports = {
         
         if(!message.member.roles.cache.has(modRole) && !message.member.roles.cache.has(helperRole)){
             console.log('Oh oh') 
-            message.channel.send('No tenes permiso para usar este comando.');
+            message.channel.send(`${message.member} No tenes permiso para usar este comando.`);
         } else if (muteMember == message.member.id){
             console.log('Woopity scoop')
             message.channel.send('No puedes mutearte a vos mismo.');

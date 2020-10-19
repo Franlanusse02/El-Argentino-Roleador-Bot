@@ -20,7 +20,7 @@ module.exports = {
                 message.channel.send(`${message.member} Por favor especifica a quien quiere banear.`);
             }
         } else {
-            message.channel.send(`${message.member} No tenes permiso para usar este command.`);
+            message.channel.send(`${message.member} No tenes permiso para usar este comando.`);
         }
     }
 }
