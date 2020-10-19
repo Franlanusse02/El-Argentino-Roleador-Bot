@@ -6,6 +6,8 @@ const prefix = '<';
 
 const fs = require('fs');
 
+let modRole = '685934052943200385';
+let helperRole = '718632822532735000';
 
 
 client.commands = new Discord.Collection();
@@ -37,24 +39,48 @@ client.on('message', message => {
 
     if(command === 'ping'){
        client.commands.get('ping').execute(message, args);
+       
     } else if(command === 'invitacion'){
         client.commands.get('invitacion').execute(message, args);
+
     } else if(command === 'agree'){
         client.commands.get('agree').execute(message, args);
+
     } else if(command === 'mute'){
-        client.commands.get('mute').execute(message, args);
+        if (member.roles.cache.has(modRole) && members.roles.cache.has(helperRole)){
+            channel.message.send(`${message.member} No podes mutearte a vos mismo.`)
+        } else {
+            client.commands.get('mute').execute(message, args);
+        }
+
     } else if(command === 'unmute'){
-        client.commands.get('unmute').execute(message, args);
+        if (member.roles.cache.has(modRole) && members.roles.cache.has(helperRole)){
+            channel.message.send(`${message.member} No podes desmutearte a vos mismo.`)
+        } else {
+            client.commands.get('unmute').execute(message, args);
+        }
+
     } else if(command === 'whatislove'){
         client.commands.get('whatislove').execute(message, args);
+
     } else if(command === 'ultraping'){
         client.commands.get('ultraping').execute(message, args);
+
     } else if(!command){
         message.channel.send('Ese todavia no me lo aprendi, pedile a Fran que me lo enseñe.')
+
     } else if(command === 'ban'){
-        client.commands.get('ban').execute(message, args);
+        if (member.roles.cache.has(modRole) && members.roles.cache.has(helperRole)){
+            channel.message.send(`${message.member} No podes banearte a vos mismo.`)
+        } else {
+            client.commands.get('ban').execute(message, args);
+        }
     } else if(command === 'kick'){
-        client.commands.get('kick').execute(message, args);
+        if (member.roles.cache.has(modRole) && members.roles.cache.has(helperRole)){
+            channel.message.send(`${message.member} No podes kickearte a vos mismo.`)
+        } else {
+            client.commands.get('kick').execute(message, args);
+        }
     }
 });
 
