@@ -2,17 +2,17 @@ module.exports = {
     name: 'ban',
     description: 'Bannea un miembro',
     execute(message, args){
-        
+        let target = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
         const { member , mentions } = message;
 
-        if (muteMember == message.member.id){
+        if (target == message.member.id){
             
             message.channel.send('No puedes desmutearte a vos mismo.');
 
         
         } else if (message.member.permissions.has('ADMINISTRATOR') || 
         message.member.permissions.has('BAN_MEMBERS')) {
-            let target = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
+            
             if(target){
                 target.ban();
                 message.channel.send(`${target.user} fue baneado por ${message.member}`);
