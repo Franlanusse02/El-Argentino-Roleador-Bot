@@ -14,9 +14,7 @@ module.exports = {
             message.channel.send('No tenes permiso para usar este comando.');
         } else if (muteMember == message.member.id){
             console.log('Woopity scoop')
-            if (message.member.roles.cache.has(modRole) && message.member.roles.cache.has(helperRole)) {  
-                message.channel.send('No puedes mutearte a vos mismo.')
-            }
+            message.channel.send('No puedes mutearte a vos mismo.')
         } else if (!args[0]){
             message.channel.send('Nadie fue seleccionado para mutear.');
             
