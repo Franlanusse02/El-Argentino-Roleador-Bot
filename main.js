@@ -47,14 +47,14 @@ client.on('message', message => {
         client.commands.get('agree').execute(message, args);
 
     } else if(command === 'mute'){
-        if (member.roles.cache.has(modRole) && members.roles.cache.has(helperRole)){
+        if (message.member.roles.cache.has(modRole) && message.members.roles.cache.has(helperRole)){
             channel.message.send(`${message.member} No podes mutearte a vos mismo.`)
         } else {
             client.commands.get('mute').execute(message, args);
         }
 
     } else if(command === 'unmute'){
-        if (member.roles.cache.has(modRole) && members.roles.cache.has(helperRole)){
+        if (message.member.roles.cache.has(modRole) && message.members.roles.cache.has(helperRole)){
             channel.message.send(`${message.member} No podes desmutearte a vos mismo.`)
         } else {
             client.commands.get('unmute').execute(message, args);
@@ -70,13 +70,13 @@ client.on('message', message => {
         message.channel.send('Ese todavia no me lo aprendi, pedile a Fran que me lo enseñe.')
 
     } else if(command === 'ban'){
-        if (member.roles.cache.has(modRole) && members.roles.cache.has(helperRole)){
+        if (message.message.member.roles.cache.has(modRole) && message.members.roles.cache.has(helperRole)){
             channel.message.send(`${message.member} No podes banearte a vos mismo.`)
         } else {
             client.commands.get('ban').execute(message, args);
         }
     } else if(command === 'kick'){
-        if (member.roles.cache.has(modRole) && members.roles.cache.has(helperRole)){
+        if (message.member.roles.cache.has(modRole) && message.members.roles.cache.has(helperRole)){
             channel.message.send(`${message.member} No podes kickearte a vos mismo.`)
         } else {
             client.commands.get('kick').execute(message, args);
