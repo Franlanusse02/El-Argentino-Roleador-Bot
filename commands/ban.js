@@ -7,7 +7,7 @@ module.exports = {
 
         if (target == message.member.id){
             
-            message.channel.send('No puedes desmutearte a vos mismo.');
+            message.channel.send('No puedes banearte a vos mismo.');
 
         
         } else if (message.member.permissions.has('ADMINISTRATOR') || 
