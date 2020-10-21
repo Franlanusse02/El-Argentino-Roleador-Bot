@@ -58,6 +58,9 @@ client.on('message', message => {
     } else if(command === 'fakeroll'){
         client.commands.get('fakeroll').execute(message, args);
     }
+	else if(command === 'help'){
+        client.commands.get('help').execute(message, args);
+    }
 });
 
 client.login(process.env.token);
