@@ -59,7 +59,6 @@ client.on('message', message => {
         client.commands.get('fakeroll').execute(message, args);
     } else if(command === 'help'){
         client.commands.get('help').execute(message, args);
-        console.log('Toy en narnia');
     }
 });
 
