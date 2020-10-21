@@ -3,6 +3,7 @@ module.exports = {
     name: 'help',
     description: 'despliega la lista de comandos',
     execute(message, args){
+        const Discord = require('discord.js');
         console.log('Vamos bien');
         const membed = new Discord.MessageEmbed()
         .setColor('#4e0041')
