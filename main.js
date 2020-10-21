@@ -30,7 +30,7 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on('message', message => {
-    if(!message.content.startsWith(prefix) || message.author.bot) return;
+    if(!message.content.startsWith(prefix) && message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
@@ -55,6 +55,8 @@ client.on('message', message => {
         client.commands.get('ban').execute(message, args);
     } else if(command === 'kick'){
         client.commands.get('kick').execute(message, args);
+    } else if(command === 'fakeroll'){
+        client.commands.get('fakeroll').execute(message, args);
     }
 });
 
