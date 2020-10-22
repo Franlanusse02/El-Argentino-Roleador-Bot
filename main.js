@@ -57,6 +57,8 @@ client.on('message', message => {
         client.commands.get('fakeroll').execute(message, args);
     } else if(command === 'help'){
         client.commands.get('help').execute(message, args);
+    } else if(command === 'miembros'){
+        client.commands.get('miembros').execute(message, args);
     }
 });
 

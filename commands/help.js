@@ -19,6 +19,7 @@ module.exports = {
 		    { name: 'ping', value: 'Pong' },
 		    { name: 'ultraPing', value: 'Remate mano de dios' },
 		    { name: 'whatislove', value: '(?' },
+			{ name: 'miembros', value: 'Contador de gatos locos' },
 	    )
         message.channel.send(membed);
 
