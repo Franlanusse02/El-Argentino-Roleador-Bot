@@ -30,7 +30,7 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on('message', message => {
-    if(!message.content.startsWith(prefix) && message.author.bot) return;
+    if(!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
@@ -49,8 +49,6 @@ client.on('message', message => {
         client.commands.get('whatislove').execute(message, args);
     } else if(command === 'ultraping'){
         client.commands.get('ultraping').execute(message, args);
-    } else if(!command){
-        message.channel.send('Ese todavia no me lo aprendi, pedile a Fran que me lo enseñe.')
     } else if(command === 'ban'){
         client.commands.get('ban').execute(message, args);
     } else if(command === 'kick'){
@@ -59,7 +57,6 @@ client.on('message', message => {
         client.commands.get('fakeroll').execute(message, args);
     } else if(command === 'help'){
         client.commands.get('help').execute(message, args);
-        console.log('Toy en narnia');
     }
 });
 
