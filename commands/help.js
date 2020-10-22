@@ -6,10 +6,10 @@ module.exports = {
         const Discord = require('discord.js');
         console.log('Vamos bien');
         const membed = new Discord.MessageEmbed()
-        .setColor('#4e0041')
+        .setColor('#70cbff')
         .setTitle("Lista de Comandos")
-        .setThumbnail('https://cdn.discordapp.com/avatars/765340681249751102/494b01e4ab2f472ec856787860a0f989.png?size=256')
-        .setAuthor('El argentino roleador', 'https://cdn.discordapp.com/avatars/765340681249751102/494b01e4ab2f472ec856787860a0f989.png?size=256')
+        .setThumbnail('https://i.ibb.co/PNszQD2/494b01e4ab2f472ec856787860a0f989.png')
+        .setAuthor('El argentino roleador', 'https://i.ibb.co/PNszQD2/494b01e4ab2f472ec856787860a0f989.png')
    	    .addFields(
 		    { name: 'ban', value: 'Banea a un miembro (solo para mods/admins)' },
 		    { name: 'kick', value: 'Kickea a un miembro (solo para mods/admins)' },
