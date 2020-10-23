@@ -3,7 +3,7 @@ module.exports = {
     description: 'Contador de gatos locos',
     execute(message, args){
         const Discord = require('discord.js');
-		const maradonado = client.emojis.cache.find(emoji => emoji.name === `maradonado`);
+		const maradonado = Discord.Client().emojis.cache.find(emoji => emoji.name === `maradonado`);
 	    const miembros = new Discord.MessageEmbed()
         .setColor('#70cbff')
         .setTitle("Hola! (re cortés el bot, nada que ver)")
