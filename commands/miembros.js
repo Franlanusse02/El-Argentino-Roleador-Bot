@@ -15,7 +15,7 @@ module.exports = {
    	    .addFields(
 		    { name: 'Usted se encuentra en', value:`${message.guild.name}` },
 		    { name: "Actualmente somos", value:`${message.guild.memberCount} gatos locos`},
-            { name: "Disfruta de tu estancia (mientras puedas)", value: `${maradonado}`},)
+            { name: `Disfruta de tu estancia (mientras puedas) ${maradonado}`, value: `${maradonado}`},)
             
         message.channel.send(miembros);
 
