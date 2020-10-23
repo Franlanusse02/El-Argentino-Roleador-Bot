@@ -4,7 +4,7 @@ module.exports = {
     execute(message, args){
         const Discord = require('discord.js');
         const client = new Discord.Client();
-		const maradonado = client.emojis.cache.get(':maradonado:698296682391011369');
+		const maradonado = Discord.client.emojis.cache.get('698296682391011369');
 	    const miembros = new Discord.MessageEmbed()
         .setColor('#70cbff')
         .setTitle("Hola! (re cortés el bot, nada que ver)")
