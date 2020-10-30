@@ -23,9 +23,6 @@ client.once('ready', () => {
 });
 
 client.on('guildMemberAdd', member => {
-    const role = member.guild.roles.cache.filter(r => r.name === "roleName");
-    if (!role) return;
-
     member.roles.add('717516545148059668');
 });
 
