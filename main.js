@@ -24,7 +24,8 @@ client.once('ready', () => {
 });
 
 client.on("guildMemberAdd", member => {
-  member.roles.add('noobRole');
+    console.log('Alguien entro al server');
+    member.roles.add('noobRole');
 });
 
 client.on('message', message => {
