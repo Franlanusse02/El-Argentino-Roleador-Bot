@@ -58,7 +58,9 @@ client.on('message', message => {
     } else if(command === 'miembros'){
         client.commands.get('miembros').execute(message, args);
     } else if(command === 'memberjoin'){
+        message.channel.send('Parte 1 puti')
         client.emit('guildMemberAdd', message.member);
+        message.channel.send('Parte 2 troli')
         console.log('Member parte 1');
     }
 });
