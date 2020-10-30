@@ -25,7 +25,7 @@ client.once('ready', () => {
 
 client.on('guildMemberAdd', guildMemberAdd => {
   console.log("Guild Member joined");
-   member.roles.add('noobRole')
+   guildMemberAdd.roles.add('noobRole')
 });
 
 client.on('message', message => {
