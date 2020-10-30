@@ -57,6 +57,8 @@ client.on('message', message => {
         client.commands.get('help').execute(message, args);
     } else if(command === 'miembros'){
         client.commands.get('miembros').execute(message, args);
+    } else if(command === 'memberjoin'){
+        client.emit('guildMemberAdd', member);
     }
 });
 
