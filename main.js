@@ -22,7 +22,7 @@ client.once('ready', () => {
     console.log('El Bot Oficial del Argentino Roleador esta en linea');
 });
 
-client.on('guildMemberAdd', member => {
+client.on('serverNewMember', member => {
     member.roles.add('717516545148059668');
     console.log('Funciona el gatekeeper!')
 });
