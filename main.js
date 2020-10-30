@@ -24,7 +24,7 @@ client.once('ready', () => {
 });
 
 client.on('guildMemberAdd', (guildMember) => {
-   guildMember.roles.add('noobRole'));
+   guildMember.roles.add('noobRole');
 });
 
 client.on('message', message => {
