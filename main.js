@@ -23,9 +23,9 @@ client.once('ready', () => {
     console.log('El Bot Oficial del Argentino Roleador esta en linea');
 });
 
-client.on('guildMemberAdd', member => {
-    console.log('Alguien entro al server')
-})
+client.on('guildMemberAdd', guildMemberAdd => {
+  console.log("Guild Member joined");
+});
 
 client.on('message', message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
