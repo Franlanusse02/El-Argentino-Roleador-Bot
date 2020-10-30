@@ -24,6 +24,7 @@ client.once('ready', () => {
 
 client.on('guildMemberAdd', member => {
     member.roles.add('717516545148059668');
+    console.log('Funciona el gatekeeper!')
 });
 
 client.on('message', message => {
