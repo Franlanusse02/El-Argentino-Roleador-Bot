@@ -6,6 +6,7 @@ const prefix = '<';
 
 const fs = require('fs');
 
+const noobRole = '717516545148059668';
 
 
 client.commands = new Discord.Collection();
@@ -22,9 +23,8 @@ client.once('ready', () => {
     console.log('El Bot Oficial del Argentino Roleador esta en linea');
 });
 
-client.on('serverNewMember', member => {
-    member.roles.add('717516545148059668');
-    console.log('Funciona el gatekeeper!')
+client.on('guildMemberAdd', (guildMember) => {
+   guildMember.roles.add('noobRole'));
 });
 
 client.on('message', message => {
