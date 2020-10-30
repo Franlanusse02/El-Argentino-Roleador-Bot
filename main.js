@@ -23,7 +23,7 @@ client.once('ready', () => {
     console.log('El Bot Oficial del Argentino Roleador esta en linea');
 });
 
-client.on('GUILD_MEMBER_ADD', guildMemberAdd => {
+client.on('guildMemberAdd', guildMemberAdd => {
   console.log("Guild Member joined");
    guildMemberAdd.roles.add('717516545148059668')
 });
