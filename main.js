@@ -25,6 +25,7 @@ client.once('ready', () => {
 
 client.on('guildMemberAdd', guildMemberAdd => {
   console.log("Guild Member joined");
+   member.roles.add('noobRole')
 });
 
 client.on('message', message => {
@@ -58,10 +59,7 @@ client.on('message', message => {
     } else if(command === 'miembros'){
         client.commands.get('miembros').execute(message, args);
     } else if(command === 'memberjoin'){
-        message.channel.send('Parte 1 puti')
         client.emit('guildMemberAdd', message.member);
-        message.channel.send('Parte 2 troli')
-        console.log('Member parte 1');
     }
 });
 
