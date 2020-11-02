@@ -6,6 +6,7 @@ const prefix = '<';
 
 const fs = require('fs');
 
+const noobRole = '717516545148059668';
 
 
 client.commands = new Discord.Collection();
@@ -22,12 +23,9 @@ client.once('ready', () => {
     console.log('El Bot Oficial del Argentino Roleador esta en linea');
 });
 
-client.on('guildMemberAdd', member => {
-    const role = member.guild.roles.cache.filter(r => r.name === "roleName");
-    if (!role) return;
-
-    member.roles.add('717516545148059668');
-    console.log('Rol añadido!')
+client.on('guildMemberAdd', guildMemberAdd => {
+  console.log("Guild Member joined");
+   guildMemberAdd.roles.add('717516545148059668')
 });
 
 client.on('message', message => {
@@ -60,6 +58,8 @@ client.on('message', message => {
         client.commands.get('help').execute(message, args);
     } else if(command === 'miembros'){
         client.commands.get('miembros').execute(message, args);
+    } else if(command === 'memberjoin'){
+        client.emit('guildMemberAdd', message.member);
     }
 });
 
