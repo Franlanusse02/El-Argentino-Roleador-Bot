@@ -27,6 +27,7 @@ client.on('guildMemberAdd', member => {
     if (!role) return;
 
     member.roles.add('717516545148059668');
+    console.log('Rol añadido!')
 });
 
 client.on('message', message => {
